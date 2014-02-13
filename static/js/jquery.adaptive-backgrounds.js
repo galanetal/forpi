@@ -70,7 +70,15 @@
           var $parent;
 
           if ( useCSSBackground() ){
-            $parent = $this;
+	        if ( $this.attr( DATA_PARENT ) ){
+	        	$parent = $this.parents( $this.attr( DATA_PARENT ) );
+	        } 
+	        else if (opts.parent) {
+	        	$parent = $this.parents( opts.parent );
+	        }
+	        else {
+            	$parent = $this;
+	        }
           }
           else if ( $this.attr( DATA_PARENT ) ){
             $parent = $this.parents( $this.attr( DATA_PARENT ) );

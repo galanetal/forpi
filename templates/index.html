@@ -7,7 +7,7 @@
 			
 				<ul class="ch-grid">
 					<li>
-						<div class="ch-item ch-img-1" data-adaptive-background='1' data-ab-css-background='1'>				
+						<div class="ch-item ch-img-1" data-adaptive-background='1' data-ab-css-background='1' data-ab-parent='body'>				
 							<div class="ch-info-wrap">
 								<div class="ch-info">
 									<div class="ch-info-front ch-img-1"></div>
@@ -20,7 +20,10 @@
 						</div>
 					</li>
 					<li>
-						<div class="ch-item ch-img-2">
+						<!--
+						<div class="ch-item ch-img-2" data-adaptive-background='1' data-ab-css-background='1' data-ab-parent='li'>
+						-->
+						<div class="ch-item ch-img-2" data-adaptive-background='1' data-ab-css-background='1'>
 							<div class="ch-info-wrap">
 								<div class="ch-info">
 									<div class="ch-info-front ch-img-2"></div>
@@ -33,7 +36,10 @@
 						</div>
 					</li>
 					<li>
-						<div class="ch-item ch-img-3">
+						<!--
+						<div class="ch-item ch-img-3" data-adaptive-background='1' data-ab-css-background='1' data-ab-parent='li'>
+						-->
+						<div class="ch-item ch-img-3" data-adaptive-background='1' data-ab-css-background='1'>
 							<div class="ch-info-wrap">
 								<div class="ch-info">
 									<div class="ch-info-front ch-img-3"></div>
@@ -51,7 +57,14 @@
         </div>
         <script type="text/javascript">
 			$(document).ready(function(){
-			  //$.adaptiveBackground.run()
+			  	$.adaptiveBackground.run({parent:'body'})
+			  	$('.ch-item').on('ab-color-found', function(e,payload){
+			  	  console.log('tpl')
+			  	  console.log(e);
+			  	  console.log(payload);
+				  console.log(payload.color);   // The dominant color in the image.
+				  console.log(payload.palette); // The color palette found in the image.
+				});
 			});
         </script>
 {% endblock %}
