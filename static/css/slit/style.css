@@ -112,3 +112,15 @@
 	background: #ccc;
 }
 
+
+.ch-img-1 { 
+	background-size: 165%;
+	background-position: 300px 380px;
+	background-image: url(../../images/16.jpg);
+}
+
+.ch-img-3{ 
+	background-size: 165%;
+	background-position: 300px 460px;
+	background-image: url(../../images/18.jpg);
+}
