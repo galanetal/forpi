@@ -266,7 +266,7 @@
 /* Second Slide */
 .demo-1 .bg-2 .sl-slide-inner,
 .demo-1 .bg-2 .sl-content-slice {
-	background: #000;
+	background: rgba(185, 242, 235, .2);
 }
 
 .demo-1 .bg-2 [data-icon]:after,
