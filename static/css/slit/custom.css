@@ -266,7 +266,14 @@
 /* Second Slide */
 .demo-1 .bg-2 .sl-slide-inner,
 .demo-1 .bg-2 .sl-content-slice {
-	background: rgba(185, 242, 235, .2);
+	background: rgba(185, 242, 235, .9);
+}
+
+.animated.fadeInLeft{
+	animation-duration: 3s;
+    animation-delay: 1s;
+	-webkit-animation-duration: 3s;
+    -webkit-animation-delay: 1s;
 }
 
 .demo-1 .bg-2 [data-icon]:after,

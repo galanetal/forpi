@@ -9,13 +9,13 @@
       <script type="text/javascript" src="{{ url_for('static',filename='js/slit/modernizr.custom.js') }}" ></script> 
       <script type="text/javascript" src="{{ url_for('static',filename='js/jquery.adaptive-backgrounds.js') }}"></script>   
 
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/animate.css') }}" />
       <!--slitslider-->
       <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/slit/demo.css') }}" />
       <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/slit/style.css') }}"  />
       <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/slit/custom.css') }}" />
 
 	  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:900&text=ABCDEFGHIJKLMNOPQRSTUVWXYZ' rel='stylesheet' type='text/css'>
-      <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='js/bower_components/BigVideo.js/css/bigvideo.css') }}" />
     </head>
 
     <body>
@@ -28,7 +28,7 @@
 				<div class="sl-slider">
 				
 					<div class="sl-slide bg-1" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
-						<div class="sl-slide-inner">
+						<div class="sl-slide-inner" id="triangles-fill">
 							<div class="deco ch-img-1"></div>
 							<h2>Tu G/\lan</h2>
 							<blockquote><p>You are the one I like.</p><cite>@alangalan</cite></blockquote>
@@ -36,7 +36,7 @@
 					</div>
 					
 					<div class="sl-slide bg-2" data-orientation="vertical" data-slice1-rotation="10" data-slice2-rotation="-15" data-slice1-scale="1.5" data-slice2-scale="1.5">
-						<div class="sl-slide-inner">
+						<div class="sl-slide-inner" id="phoetic-fill">
 							<div class="deco ch-img-2"></div>
 						</div>
 					</div>
@@ -93,10 +93,11 @@
 						$nav = $( '#nav-dots > span' ),
 						slitslider = $( '#slider' ).slitslider( {
 							onBeforeChange : function( slide, pos ) {
-
 								$nav.removeClass( 'nav-dot-current' );
 								$nav.eq( pos ).addClass( 'nav-dot-current' );
-
+							},
+							onAfterChange : function( slide, pos ) {
+								$(window).trigger('resize');
 							}
 						} ),
 
@@ -136,6 +137,7 @@
 									}
 									
 									slitslider.jump( i + 1 );
+
 									return false;
 								
 								} );
@@ -172,18 +174,15 @@
 		<script type="text/javascript" src="{{ url_for('static',filename='js/bower_components/jquery-ui/ui/minified/jquery-ui.min.js') }}" ></script> 
 		<script src="//vjs.zencdn.net/4.3/video.js"></script>
 
-		<!-- BigVideo -->
-		<script type="text/javascript" src="{{ url_for('static',filename='js/bower_components/BigVideo.js/lib/bigvideo.js') }}" ></script> 
-		<script type="text/javascript" src="{{ url_for('static',filename='js/bower_components/eventEmitter/eventEmitter.min.js') }}" ></script> 
-		<script type="text/javascript" src="{{ url_for('static',filename='js/bower_components/eventie/eventie.js') }}" ></script> 
-		<script type="text/javascript" src="{{ url_for('static',filename='js/bower_components/imagesloaded/imagesloaded.js') }}" ></script> 
+		
+		<script type="text/javascript" src="{{ url_for('static',filename='js/bower_components/jquery-anystretch/jquery.anystretch.js') }}" ></script> 
+		<script type="text/javascript" src="{{ url_for('static',filename='js/bower_components/jquery.transit/jquery.transit.js') }}" ></script> 
 
 		<!-- Demo -->
 		<script>
 		    $(function() {
-		        var BV = new $.BigVideo();
-				BV.init();
-				BV.show('../static/images/phoetic.jpg');
+  				$("#phoetic-fill").anystretch('../static/images/phoetic.jpg');
+  				$("#triangles-fill").anystretch('../static/images/triangles.jpg');
 		    });
 		</script>
 

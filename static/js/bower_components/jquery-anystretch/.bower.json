@@ -1,0 +1,15 @@
+{
+  "name": "jquery-anystretch",
+  "homepage": "https://github.com/danmillar/jquery-anystretch",
+  "version": "1.2.5",
+  "_release": "1.2.5",
+  "_resolution": {
+    "type": "version",
+    "tag": "1.2.5",
+    "commit": "411955549ab7254d2d42735a793248c9116f67e1"
+  },
+  "_source": "git://github.com/danmillar/jquery-anystretch.git",
+  "_target": "~1.2.5",
+  "_originalSource": "jquery-anystretch",
+  "_direct": true
+}
