@@ -15,6 +15,8 @@
       <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/slit/style.css') }}"  />
       <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/slit/custom.css') }}" />
 
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='js/bower_components/BigVideo.js/css/bigvideo.css') }}" />
+
 	  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:900&text=ABCDEFGHIJKLMNOPQRSTUVWXYZ' rel='stylesheet' type='text/css'>
     </head>
 
@@ -173,6 +175,11 @@
 		<script type="text/javascript" src="{{ url_for('static',filename='js/bower_components/jquery-ui/ui/jquery-ui.js') }}" ></script> 
 		<script type="text/javascript" src="{{ url_for('static',filename='js/bower_components/jquery-ui/ui/minified/jquery-ui.min.js') }}" ></script> 
 		<script src="//vjs.zencdn.net/4.3/video.js"></script>
+		<script type="text/javascript" src="{{ url_for('static',filename='js/bower_components/eventEmitter/eventEmitter.min.js') }}" ></script> 
+		<script type="text/javascript" src="{{ url_for('static',filename='js/bower_components/eventie/eventie.js') }}" ></script> 
+		<script type="text/javascript" src="{{ url_for('static',filename='js/bower_components/imagesloaded/imagesloaded.js') }}" ></script> 
+	    <!-- BigVideo -->
+		<script type="text/javascript" src="{{ url_for('static',filename='js/bower_components/BigVideo.js/lib/bigvideo.js') }}" ></script> 
 
 		
 		<script type="text/javascript" src="{{ url_for('static',filename='js/bower_components/jquery-anystretch/jquery.anystretch.js') }}" ></script> 
@@ -181,8 +188,14 @@
 		<!-- Demo -->
 		<script>
 		    $(function() {
-  				$("#phoetic-fill").anystretch('../static/images/phoetic.jpg');
-  				$("#triangles-fill").anystretch('../static/images/triangles.jpg');
+  				$(".bg-1 .sl-slide-inner").anystretch('../static/images/triangles.jpg');
+  				// $("#triangles-fill").anystretch('../static/images/triangles.jpg');
+  				$(".bg-2 .sl-slide-inner").anystretch('../static/images/phoetic.jpg');
+  				// $("#phoetic-fill").anystretch('../static/images/phoetic.jpg');
+
+  			    var BV = new $.BigVideo({container:$('.bg-3 .sl-slide-inner'),ambient:true});
+			    BV.init();
+			    BV.show('../static/images/create.m4v',{ambient:true,doLoop:true});	
 		    });
 		</script>
 
