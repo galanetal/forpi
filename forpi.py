@@ -10,6 +10,10 @@ def index():
 def slit():
     return render_template('slit.html')
 
+@app.route("/panels")
+def panels():
+    return render_template('panels.html')
+
 if __name__ == "__main__":
 	app.debug = True
 	app.run()

@@ -15,6 +15,10 @@
       <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/slit/style.css') }}"  />
       <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/slit/custom.css') }}" />
 
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/imgslider/imgslider.css') }}"  />
+
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/slit/custom.css') }}" />
+
       <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='js/bower_components/BigVideo.js/css/bigvideo.css') }}" />
 
 	  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:900&text=ABCDEFGHIJKLMNOPQRSTUVWXYZ' rel='stylesheet' type='text/css'>
@@ -53,9 +57,55 @@
 					
 					<div class="sl-slide bg-4" data-orientation="vertical" data-slice1-rotation="-5" data-slice2-rotation="25" data-slice1-scale="2" data-slice2-scale="1">
 						<div class="sl-slide-inner">
-							<div class="deco" data-icon="I"></div>
-							<h2>Donna nobis pacem</h2>
-							<blockquote><p>The human body has no more need for cows' milk than it does for dogs' milk, horses' milk, or giraffes' milk.</p><cite>Michael Klaper M.D.</cite></blockquote>
+							<div class="main">
+
+							<div class="fs-slider" id="fs-slider">
+								
+								<figure>
+									<img src="static/images/handstands/1.jpg" alt="image01" />
+									<figcaption>
+										<h3>Eloquence</h3>
+										<p>American apparel flexitarian put a bird on it, mixtape typewriter irony aesthetic. </p>
+									</figcaption>
+								</figure>
+								
+								<figure>
+									<img src="static/images/handstands/2.jpg" alt="image02" />
+									<figcaption>
+										<h3>Quintessential</h3>
+										<p>Cardigan craft beer mixtape, skateboard forage fixie truffaut messenger bag. </p>
+									</figcaption>
+								</figure>
+								
+								<figure>
+									<img src="static/images/handstands/3.jpg" alt="image03" />
+									<figcaption>
+										<h3>Surreptitious</h3>
+										<p>Truffaut iphone flexitarian, banh mi thundercats cliche wolf biodiesel gastropub. </p>
+									</figcaption>
+								</figure>
+								
+								<figure>
+									<img src="static/images/handstands/4.jpg" alt="image04" />
+									<figcaption>
+										<h3>Imbroglio</h3>
+										<p>Scenester fixie pickled, shoreditch fugiat enim craft beer retro mustache.</p>
+									</figcaption>
+								</figure>
+								
+								<figure>
+									<img src="static/images/handstands/5.jpg" alt="image05" />
+									<figcaption>
+										<h3>Lissome</h3>
+										<p>Aute sunt aliqua do sapiente. Food truck ut sustainable thundercats four loko.</p>
+									</figcaption>
+								</figure>
+								
+							</div><!-- /fs-slider -->
+
+							</div>
+							<h2>Your H/\NDST/\NDS</h2>
+							<blockquote><p>The way you center yourself by standing on your head.</p><cite>@alangalan</cite></blockquote>
 						</div>
 					</div>
 					
@@ -185,6 +235,7 @@
 		<script type="text/javascript" src="{{ url_for('static',filename='js/bower_components/jquery-anystretch/jquery.anystretch.js') }}" ></script> 
 		<script type="text/javascript" src="{{ url_for('static',filename='js/bower_components/jquery.transit/jquery.transit.js') }}" ></script> 
 
+		<script type="text/javascript" src="{{ url_for('static',filename='js/imgslider/jquery.imgslider.js') }}" ></script> 
 		<!-- Demo -->
 		<script>
 		    $(function() {
@@ -196,6 +247,9 @@
   			    var BV = new $.BigVideo({container:$('.bg-3 .sl-slide-inner'),ambient:true});
 			    BV.init();
 			    BV.show('../static/images/create.m4v',{ambient:true,doLoop:true});	
+
+			    $( '#fs-slider' ).imgslider();
+
 		    });
 		</script>
 
